@@ -329,7 +329,7 @@ Class Mongo_db{
 				$this->selects[$col] = 1;
 			}
 		}
-		else
+		if ( ! empty($excludes))
 		{
 			foreach ($excludes as $col)
 			{
