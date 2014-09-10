@@ -36,6 +36,7 @@ Class Mongo_db{
 	private $limit	= 10;
 	private $offset	= 0;
 	private $sorts	= array();
+	private $return_as = 'array';
 
 	/**
 	* --------------------------------------------------------------------------------
@@ -173,6 +174,15 @@ Class Mongo_db{
 			else
 			{
 				$this->journal = $this->config[$this->activate]['journal'];
+			}
+
+			if(empty($this->config[$this->activate]['return_as']))
+			{
+				$this->return_as = 'array';
+			}
+			else
+			{
+				$this->return_as = $this->config[$this->activate]['return_as'];
 			}
 		}
 		else
@@ -757,9 +767,23 @@ Class Mongo_db{
 			$returns = array();
 			while ($documents->hasNext())
 			{
-				$returns[] = (object) $documents->getNext();
+				if ($this->return_as == 'object')
+				{
+					$returns[] = (object) $documents->getNext();	
+				}
+				else
+				{
+					$returns[] = (array) $documents->getNext();
+				}
 			}
-			return (object)$returns;
+			if ($this->return_as == 'object')
+			{
+				return (object)$returns;
+			}
+			else
+			{
+				return $returns;
+			}
 		}
 		catch (MongoCursorException $e)
 		{
