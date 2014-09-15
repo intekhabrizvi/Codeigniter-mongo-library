@@ -1450,7 +1450,7 @@ Class Mongo_db{
 
 		try
 		{
-			$this->db = $this->connection->{$this->database};
+			$this->db = $this->connect->{$this->database};
 			return (TRUE);
 		}
 		catch (Exception $e)
@@ -1476,7 +1476,7 @@ Class Mongo_db{
 
 		try
 		{
-			$this->connection->{$database}->drop();
+			$this->connect->{$database}->drop();
 			return (TRUE);
 		}
 		catch (Exception $e)
