@@ -1233,7 +1233,14 @@ Class Mongo_db{
 	 	{
 	 		$documents = $this->db->{$collection}->aggregate($operation);
 	 		$this->_clear();
-	 		return (object)$documents;
+	 		if ($this->return_as == 'object')
+			{
+				return (object)$documents;
+			}
+			else
+			{
+				return $documents;
+			}
 	 	}
 	 	catch (MongoResultException $e)
 		{
