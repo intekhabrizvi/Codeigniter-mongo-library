@@ -33,7 +33,7 @@ Class Mongo_db{
 	private $selects = array();
 	private $updates = array();
 	private $wheres	= array();
-	private $limit	= 10;
+	private $limit	= 999999;
 	private $offset	= 0;
 	private $sorts	= array();
 	private $return_as = 'array';
