@@ -1282,6 +1282,28 @@ Class Mongo_db{
 		return ($this);
 	}
 
+	 /**
+	* --------------------------------------------------------------------------------
+	* Mongo Date
+	* --------------------------------------------------------------------------------
+	*
+	* Create new MongoDate object from current time or pass timestamp to create
+	* mongodate.
+	*
+	* @usage : $this->mongo_db->date($timestamp);
+	*/
+	public function date($stamp = FALSE)
+	{
+		if ( $stamp == FALSE )
+		{
+			return new MongoDate();
+		}
+		else
+		{
+			return new MongoDate($stamp);
+		}
+		
+	}
 	/**
 	* --------------------------------------------------------------------------------
 	* // Limit results
