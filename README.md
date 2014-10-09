@@ -1,7 +1,16 @@
-CIMongo
+CIMongo - MongoDB Library for Codeigniter 2
 =======
 
-MongoDB Library for Codeigniter 2
+This library help you to use perform MongoDB based queries just like active record in CodeIgniter.
+
+This library support
+* Write Concern and journal
+* Read Preference
+* Aggregation Framework
+
+
+
+#Methods
 
 ##Insert Method
 * `insert` Insert a new document into a collection
