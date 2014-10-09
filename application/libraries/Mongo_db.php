@@ -204,7 +204,15 @@ Class Mongo_db{
 		$this->prepare();
 		try
 		{
-			$dns = "mongodb://{$this->username}:{$this->password}@{$this->hostname}:{$this->port}/{$this->database}";
+			if(isset($this->config[$this->activate]['no_auth']) == TRUE && $this->config[$this->activate]['no_auth'] == TRUE)
+			{
+				$dns = "mongodb://{$this->hostname}:{$this->port}/{$this->database}";
+			}
+			else
+			{
+				$dns = "mongodb://{$this->username}:{$this->password}@{$this->hostname}:{$this->port}/{$this->database}";
+			}
+			//$dns = "mongodb://{$this->username}:{$this->password}@{$this->hostname}:{$this->port}/{$this->database}";
 			$this->connect = new MongoClient($dns);
 			$this->db = $this->connect->selectDB($this->database);
 			$this->db = $this->connect->{$this->database};

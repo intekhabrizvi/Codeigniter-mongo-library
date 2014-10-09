@@ -27,6 +27,7 @@
 
 $config['mongo_db']['active'] = 'default';
 
+$config['mongo_db']['default']['no_auth'] = FALSE;
 $config['mongo_db']['default']['hostname'] = 'localhost';
 $config['mongo_db']['default']['port'] = '27017';
 $config['mongo_db']['default']['username'] = 'username';
@@ -39,6 +40,7 @@ $config['mongo_db']['default']['journal'] = TRUE;
 $config['mongo_db']['default']['read_preference'] = NULL;
 $config['mongo_db']['default']['read_preference_tags'] = NULL;
 
+$config['mongo_db']['default']['no_auth'] = FALSE;
 $config['mongo_db']['test']['hostname'] = 'localhost';
 $config['mongo_db']['test']['port'] = '27017';
 $config['mongo_db']['test']['username'] = 'username';
