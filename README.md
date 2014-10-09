@@ -23,4 +23,38 @@ MongoDB Library for Codeigniter 2
 * `where_ne` Where something is not equal to something
 * `like` Where something is search by like query
 * `order_by` Order the results
-* `limit` Limit the number of returned results
+* `limit` OR `offset` Limit the number of returned results
+* `count` Document Count based on where query
+
+##Update Method
+* `set` Sets a field to a value
+* `unset_field` Unsets a field
+* `addtoset` Adds a value to an array if doesn't exist
+* `push` Pushes a value into an array field
+* `pop` Pops a value from an array field
+* `pull` Removes an array by the value of a field
+* `rename_field` Rename a field
+* `inc` Increments the value of a field
+* `mul` Multiple the value of a field
+* `update` Update a single document in a collection
+* `update_all` Update all documents in a collection
+
+##Delete Method
+* `delete` Delete a single document in a collection
+* `delete_all` Delete all documents in a collection
+
+##Aggregation Method
+* `aggregate` Perform aggregation query on document
+
+##Index Method
+* `add_index` Create a new index on collection
+* `remove_index` Remove index from collection
+* `list_indexes` Show all index created on collections
+
+##DB Method
+* `switch_db` Switch to a different database
+* `drop_db` Drops a database
+* `drop_collection` Drops a collection
+
+##Extra Helper
+* `date` Create or convert date to MongoDB based Date
