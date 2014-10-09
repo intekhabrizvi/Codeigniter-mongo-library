@@ -913,7 +913,7 @@ Class Mongo_db{
 		}
 		elseif (is_array($values))
 		{
-			$this->updates['$attToSet'][$field] = array('$each' => $values);
+			$this->updates['$addToSet'][$field] = array('$each' => $values);
 		}
 		return $this;
 	}
