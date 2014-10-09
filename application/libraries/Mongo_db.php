@@ -1000,7 +1000,7 @@ Class Mongo_db{
 	public function rename_field($old, $new)
 	{
 		$this->_u('$rename');
-		$this->updates['$rename'][] = array($old => $new);
+		$this->updates['$rename'] = array($old => $new);
 		return $this;
 	}
 
