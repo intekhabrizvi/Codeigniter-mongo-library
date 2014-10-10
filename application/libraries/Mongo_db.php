@@ -1066,6 +1066,58 @@ Class Mongo_db{
 
 	/**
 	* --------------------------------------------------------------------------------
+	* Maximum
+	* --------------------------------------------------------------------------------
+	*
+	* The $max operator updates the value of the field to a specified value if the specified value is greater than the current value of the field.
+	*
+	* @usage: $this->mongo_db->where(array('blog_id'=>123))->max(array('num_comments' => 3))->update('blog_posts');
+	*/
+	public function max($fields = array(), $value = 0)
+	{
+		$this->_u('$max');
+		if (is_string($fields))
+		{
+			$this->updates['$max'][$fields] = $value;
+		}
+		elseif (is_array($fields))
+		{
+			foreach ($fields as $field => $value)
+			{
+				$this->updates['$max'][$field] = $value;
+			}
+		}
+		return $this;
+	}
+
+	/**
+	* --------------------------------------------------------------------------------
+	* Minimum
+	* --------------------------------------------------------------------------------
+	*
+	* The $min updates the value of the field to a specified value if the specified value is less than the current value of the field.
+	*
+	* @usage: $this->mongo_db->where(array('blog_id'=>123))->min(array('num_comments' => 3))->update('blog_posts');
+	*/
+	public function min($fields = array(), $value = 0)
+	{
+		$this->_u('$min');
+		if (is_string($fields))
+		{
+			$this->updates['$min'][$fields] = $value;
+		}
+		elseif (is_array($fields))
+		{
+			foreach ($fields as $field => $value)
+			{
+				$this->updates['$min'][$field] = $value;
+			}
+		}
+		return $this;
+	}	
+
+	/**
+	* --------------------------------------------------------------------------------
 	* //! Update
 	* --------------------------------------------------------------------------------
 	*
