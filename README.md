@@ -4,7 +4,7 @@ CIMongo - MongoDB Library for Codeigniter 2
 This library help you to use perform MongoDB based queries just like active record in CodeIgniter.
 
 This library support
-* Write Concern and journal
+* Write Concern and Journal
 * Read Preference
 * Aggregation Framework
 
@@ -45,6 +45,8 @@ This library support
 * `rename_field` Rename a field
 * `inc` Increments the value of a field
 * `mul` Multiple the value of a field
+* `max` Updates the value of the field to a specified value if the specified value is greater than the current value of the field
+* `min` Updates the value of the field to a specified value if the specified value is less than the current value of the field.
 * `update` Update a single document in a collection
 * `update_all` Update all documents in a collection
 
