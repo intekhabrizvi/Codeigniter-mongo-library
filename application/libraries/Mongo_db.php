@@ -1140,26 +1140,14 @@ Class Mongo_db{
 		try
 		{
 			$documents = $this->db->{$collection}->distinct($field, $this->wheres);
-			$returns = array();
 			$this->_clear();
-			while ($documents->hasNext())
-			{
-				if ($this->return_as == 'object')
-				{
-					$returns[] = (object) $documents->getNext();	
-				}
-				else
-				{
-					$returns[] = (array) $documents->getNext();
-				}
-			}
 			if ($this->return_as == 'object')
 			{
-				return (object)$returns;
+				return (object)$documents;
 			}
 			else
 			{
-				return $returns;
+				return $documents;
 			}
 		}
 		catch (MongoCursorException $e)
