@@ -1114,6 +1114,46 @@ Class Mongo_db{
 			}
 		}
 		return $this;
+	}
+
+	/**
+	* --------------------------------------------------------------------------------
+	* //! distinct
+	* --------------------------------------------------------------------------------
+	*
+	* Finds the distinct values for a specified field across a single collection
+	*
+	* @usage: $this->mongo_db->distinct('collection', 'field');
+	*/
+	public function distinct($collection = "", $field="")
+	{
+		if (empty($collection))
+		{
+			show_error("No Mongo collection selected for update", 500);
+		}
+
+		if (empty($field))
+		{
+			show_error("Need Collection field information for performing distinct query", 500);
+		}
+
+		try
+		{
+			$this->db->{$collection}->distinct($field, $this->wheres);
+			$this->_clear();
+			return (TRUE);
+		}
+		catch (MongoCursorException $e)
+		{
+			if(isset($this->debug) == TRUE && $this->debug == TRUE)
+			{
+				show_error("MongoDB Distinct Query Failed: {$e->getMessage()}", 500);
+			}
+			else
+			{
+				show_error("MongoDB failed", 500);
+			}
+		}
 	}	
 
 	/**
