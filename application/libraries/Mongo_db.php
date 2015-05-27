@@ -1244,6 +1244,42 @@ Class Mongo_db{
 
 	/**
 	* --------------------------------------------------------------------------------
+	* //! findAndModify
+	* --------------------------------------------------------------------------------
+	*
+	* findAndModify a single document in Mongo
+	*
+	* @usage: $this->mongo_db->findAndModify('foo', $data = array());
+	*/
+	public function findAndModify($collection = "", $options = array())
+	{
+		if (empty($collection))
+		{
+			show_error("No Mongo collection selected for update", 500);
+		}
+
+		try
+		{
+			$options = array_merge($options, array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => FALSE));
+			$this->db->{$collection}->findAndModify($this->wheres, $this->updates,null, $options);
+			$this->_clear();
+			return (TRUE);
+		}
+		catch (MongoCursorException $e)
+		{
+			if(isset($this->debug) == TRUE && $this->debug == TRUE)
+			{
+				show_error("findAndModify of data into MongoDB failed: {$e->getMessage()}", 500);
+			}
+			else
+			{
+				show_error("findAndModify of data into MongoDB failed", 500);
+			}
+		}
+	}
+
+	/**
+	* --------------------------------------------------------------------------------
 	* //! Delete
 	* --------------------------------------------------------------------------------
 	*
