@@ -207,7 +207,7 @@ Class Mongo_db{
 			$dns = "mongodb://{$this->hostname}:{$this->port}/{$this->database}";
 			if(isset($this->config[$this->activate]['no_auth']) == TRUE && $this->config[$this->activate]['no_auth'] == TRUE)
 			{
-				$option = array();
+				$options = array();
 			}
 			else
 			{
