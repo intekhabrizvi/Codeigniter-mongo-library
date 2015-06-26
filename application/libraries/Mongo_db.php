@@ -1261,9 +1261,9 @@ Class Mongo_db{
 		try
 		{
 			$options = array_merge($options, array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => FALSE));
-			$this->db->{$collection}->findAndModify($this->wheres, $this->updates,null, $options);
+			$document = $this->db->{$collection}->findAndModify($this->wheres, $this->updates,null, $options);
 			$this->_clear();
-			return (TRUE);
+			return $document;
 		}
 		catch (MongoCursorException $e)
 		{
