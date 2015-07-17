@@ -508,12 +508,12 @@ Class Mongo_db{
 	*/
 	public function where_gt($field = "", $x)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform greater then query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's value is require to perform greater then query.", 500);
 		}
@@ -534,12 +534,12 @@ Class Mongo_db{
 	*/
 	public function where_gte($field = "", $x)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform greater then or equal query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's value is require to perform greater then or equal query.", 500);
 		}
@@ -560,12 +560,12 @@ Class Mongo_db{
 	*/
 	public function where_lt($field = "", $x)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform less then query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's value is require to perform less then query.", 500);
 		}
@@ -586,12 +586,12 @@ Class Mongo_db{
 	*/
 	public function where_lte($field = "", $x)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform less then or equal to query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's value is require to perform less then or equal to query.", 500);
 		}
@@ -612,17 +612,17 @@ Class Mongo_db{
 	*/
 	public function where_between($field = "", $x, $y)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform greater then or equal to query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's start value is require to perform greater then or equal to query.", 500);
 		}
 
-		if (empty($y))
+		if (!isset($y))
 		{
 			show_error("Mongo field's end value is require to perform greater then or equal to query.", 500);
 		}
@@ -644,17 +644,17 @@ Class Mongo_db{
 	*/
 	public function where_between_ne($field = "", $x, $y)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform between and but not equal to query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's start value is require to perform between and but not equal to query.", 500);
 		}
 
-		if (empty($y))
+		if (!isset($y))
 		{
 			show_error("Mongo field's end value is require to perform between and but not equal to query.", 500);
 		}
@@ -676,12 +676,12 @@ Class Mongo_db{
 	*/
 	public function where_ne($field = '', $x)
 	{
-		if (empty($field))
+		if (!isset($field))
 		{
 			show_error("Mongo field is require to perform Where not equal to query.", 500);
 		}
 
-		if (empty($x))
+		if (!isset($x))
 		{
 			show_error("Mongo field's value is require to perform Where not equal to query.", 500);
 		}
