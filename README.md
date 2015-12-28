@@ -35,6 +35,7 @@ This library support
 * `limit` OR `offset` Limit the number of returned results
 * `count` Document Count based on where query
 * `distinct` Retrieve a list of distinct values for the given key across a single collection
+* `find_one` Retrieve single document from collection
 
 ##Update Method
 * `set` Sets a field to a value
