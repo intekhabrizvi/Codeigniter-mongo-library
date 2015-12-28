@@ -830,6 +830,57 @@ Class Mongo_db{
 
 	/**
 	* --------------------------------------------------------------------------------
+	* // Find One
+	* --------------------------------------------------------------------------------
+	*
+	* Get the single document based upon the passed parameters
+	*
+	* @usage : $this->mongo_db->find_one('foo');
+	*/
+	public function find_one($collection = "")
+	{
+
+		if (empty($collection))
+		{
+			show_error("In order to retrieve documents from MongoDB, a collection name must be passed", 500);
+		}
+
+		try{
+
+			$document = $this->db->{$collection}->findOne($this->wheres, $this->selects);
+			// Clear
+			$this->_clear();
+			if(is_null($document))
+			{
+				return false;
+			}
+			else
+			{
+				if ($this->return_as == 'object')
+				{
+					return (object)$document;
+				}
+				else
+				{
+					return $document;
+				}
+			}
+		}
+		catch (MongoCursorException $e)
+		{
+			if(isset($this->debug) == TRUE && $this->debug == TRUE)
+			{
+				show_error("MongoDB query failed: {$e->getMessage()}", 500);
+			}
+			else
+			{
+				show_error("MongoDB query failed.", 500);
+			}
+		}
+	}
+
+	/**
+	* --------------------------------------------------------------------------------
 	* Count
 	* --------------------------------------------------------------------------------
 	*
@@ -841,7 +892,7 @@ Class Mongo_db{
 	{
 		if (empty($collection))
 		{
-			show_error("In order to retreive a count of documents from MongoDB, a collection name must be passed", 500);
+			show_error("In order to retrieve a count of documents from MongoDB, a collection name must be passed", 500);
 		}
 		$count = $this->db->{$collection}->find($this->wheres)->limit((int) $this->limit)->skip((int) $this->offset)->count();
 		$this->_clear();
