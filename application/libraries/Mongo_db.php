@@ -37,6 +37,7 @@ Class Mongo_db{
 	private $offset	= 0;
 	private $sorts	= array();
 	private $return_as = 'array';
+	public $benchmark = array();
 
 	/**
 	* --------------------------------------------------------------------------------
@@ -770,9 +771,11 @@ Class Mongo_db{
 			->limit((int) $this->limit)
 			->skip((int) $this->offset)
 			->sort($this->sorts);
+			$this->explain($documents, $collection);
 			// Clear
 			$this->_clear();
 			$returns = array();
+			
 			while ($documents->hasNext())
 			{
 				if ($this->return_as == 'object')
@@ -848,6 +851,7 @@ Class Mongo_db{
 		try{
 
 			$document = $this->db->{$collection}->findOne($this->wheres, $this->selects);
+			$this->explain($document, $collection);
 			// Clear
 			$this->_clear();
 			if(is_null($document))
@@ -1462,6 +1466,20 @@ Class Mongo_db{
 		}
 		
 	}
+
+	 /**
+	* --------------------------------------------------------------------------------
+	* Mongo Benchmark
+	* --------------------------------------------------------------------------------
+	*
+	* Output all benchmark data for all performed queries.
+	*
+	* @usage : $this->mongo_db->output_benchmark();
+	*/
+	public function output_benchmark()
+	{
+		return $this->benchmark;
+	}
 	/**
 	* --------------------------------------------------------------------------------
 	* // Limit results
@@ -1736,5 +1754,20 @@ Class Mongo_db{
 		{
 			$this->updates[ $method ] = array();
 		}
+	}
+
+	private function explain($cursor, $collection, $aggregate=null)
+	{
+		array_push($this->benchmark, 
+			array(
+					'benchmark'=>$cursor->explain(),
+					'query'=> array(
+							'collection'=>$collection, 
+							'select'=>$this->selects,
+							'update'=>$this->updates, 
+							'where'=>$this->wheres, 
+							'sort'=>$this->sorts)
+				)
+		);
 	}
 }
