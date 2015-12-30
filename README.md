@@ -7,6 +7,7 @@ This library support
 * Write Concern and Journal
 * Read Preference
 * Aggregation Framework
+* Query Profiling
 
 
 
