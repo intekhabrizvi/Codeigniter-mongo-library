@@ -851,7 +851,6 @@ Class Mongo_db{
 		try{
 
 			$document = $this->db->{$collection}->findOne($this->wheres, $this->selects);
-			$this->explain($document, $collection);
 			// Clear
 			$this->_clear();
 			if(is_null($document))
