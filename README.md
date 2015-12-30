@@ -78,5 +78,5 @@ This library support
 * `date` Create or convert date to MongoDB based Date
 
 ##License 
-Do-Whatever-Fuck-You-Want-To-Do License.
+Creative Commons Attribution 3.0 License.
 Codes are provided AS IS basis, i am not responsible for anything.
