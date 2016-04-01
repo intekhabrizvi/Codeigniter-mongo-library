@@ -214,7 +214,8 @@ Class Mongo_db{
 			{
 				$options = array('username'=>$this->username, 'password'=>$this->password);
 			}
-			$this->connect = new MongoClient($dns, $options);
+			$class = (class_exists('MongoClient'))?'MongoClient':'Mongo';
+			$this->connect = new $class($dns, $options);
 			$this->db = $this->connect->selectDB($this->database);
 			$this->db = $this->connect->{$this->database};
 		}
