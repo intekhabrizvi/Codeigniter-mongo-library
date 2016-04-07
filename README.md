@@ -9,6 +9,7 @@ This library support
 * Aggregation Framework
 * Query Profiling
 
+Wiki and how-to can be found here http://intekhabrizvi.github.io/mongodb-library-for-codeigniter.html 
 
 
 #Methods
