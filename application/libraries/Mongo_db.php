@@ -1346,10 +1346,10 @@ Class Mongo_db{
 		{
 			show_error("No Mongo collection selected to delete from", 500);
 		}
-		if (isset($this->wheres['_id']) and ! is_object($this->wheres['_id']))
+		/*if (isset($this->wheres['_id']) and ! is_object($this->wheres['_id']))
 		{
 			$this->wheres['_id'] = new MongoId($this->wheres['_id']);
-		}
+		}*/
 		try
 		{
 			$this->db->{$collection}->remove($this->wheres, array('w' => $this->write_concerns, 'j'=>$this->journal, 'justOne' => FALSE));
