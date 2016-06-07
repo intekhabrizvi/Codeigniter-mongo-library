@@ -9,6 +9,7 @@ This library support
 * Aggregation Framework
 * Query Profiling
 
+Wiki and how-to can be found here http://intekhabrizvi.github.io/mongodb-library-for-codeigniter.html 
 
 
 #Methods
@@ -76,3 +77,7 @@ This library support
 
 ##Extra Helper
 * `date` Create or convert date to MongoDB based Date
+
+##License 
+Creative Commons Attribution 3.0 License.
+Codes are provided AS IS basis, i am not responsible for anything.
