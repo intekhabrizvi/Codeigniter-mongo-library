@@ -1592,7 +1592,7 @@ Class Mongo_db{
 
 		try
 		{	
-			$this->db->{$collection}->deleteIndex($keys, $options);
+			$this->db->{$collection}->deleteIndex($keys);
 			$this->_clear();
 			return ($this);
 		}
