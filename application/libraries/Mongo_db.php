@@ -343,9 +343,14 @@ Class Mongo_db{
 		}
 		if ( ! empty($includes))
 		{
-			foreach ($includes as $col)
+			foreach ($includes as $key=> $col)
 			{
-				$this->selects[$col] = 1;
+				if(is_array($col)){
+					//support $elemMatch in select
+					$this->selects[$key] = $col;
+				}else{
+					$this->selects[$col] = 1;
+				}
 			}
 		}
 		if ( ! empty($excludes))
