@@ -343,14 +343,9 @@ Class Mongo_db{
 		}
 		if ( ! empty($includes))
 		{
-			foreach ($includes as $key=> $col)
+			foreach ($includes as $col)
 			{
-				if(is_array($col)){
-					//support $elemMatch in select
-					$this->selects[$key] = $col;
-				}else{
-					$this->selects[$col] = 1;
-				}
+				$this->selects[$col] = 1;
 			}
 		}
 		if ( ! empty($excludes))
@@ -764,7 +759,7 @@ Class Mongo_db{
 	*
 	* @usage : $this->mongo_db->get('foo');
 	*/
-	public function get($collection = "")
+	public function get($collection = "", $explain = false)
 	{			
 		if (empty($collection))
 		{
@@ -776,7 +771,10 @@ Class Mongo_db{
 			->limit((int) $this->limit)
 			->skip((int) $this->offset)
 			->sort($this->sorts);
-			$this->explain($documents, $collection);
+
+			if ($explain)
+				$this->explain($documents, $collection);
+			
 			// Clear
 			$this->_clear();
 			$returns = array();
@@ -834,6 +832,23 @@ Class Mongo_db{
 		{
 			show_error("Nothing passed to perform search or value is empty.", 500);
 		}
+	}
+
+	/**
+	* --------------------------------------------------------------------------------
+	* // Collections
+	* --------------------------------------------------------------------------------
+	*
+	* List all existing collections
+	*
+	* @usage : $this->mongo_db->collections(array('options'));
+	*/
+	public function collections($options = false)
+	{
+		if (!$options)
+			return $this->db->getCollectionNames();
+		else
+			return $this->db->getCollectionNames($options);
 	}
 
 	/**

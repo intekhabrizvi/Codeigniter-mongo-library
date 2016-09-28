@@ -72,6 +72,7 @@ Wiki and how-to can be found here http://intekhabrizvi.github.io/mongodb-library
 
 ##DB Method
 * `switch_db` Switch to a different database
+* `collections` List all existing collections on database
 * `drop_db` Drops a database
 * `drop_collection` Drops a collection
 
