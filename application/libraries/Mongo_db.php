@@ -299,14 +299,13 @@ Class Mongo_db{
 		try
 		{
 			$this->db->{$collection}->batchInsert($insert, array('w' => $this->write_concerns, 'j'=>$this->journal));
-			if (isset($insert['_id']))
-			{
-				return ($insert['_id']);
+			foreach($insert as $doc) {
+				if(!isset($doc['_id'])) {
+					show_error("Batch insert of data into MongoDB failed", 500);
+					return (FALSE);
+				}
 			}
-			else
-			{
-				return (FALSE);
-			}
+			return $insert;
 		}
 		catch (MongoCursorException $e)
 		{
