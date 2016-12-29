@@ -1240,7 +1240,7 @@ Class Mongo_db{
 
 		try
 		{
-			$options = array_merge($options, array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => FALSE));
+			$options = array_merge(array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => FALSE), $options);
 			$this->db->{$collection}->update($this->wheres, $this->updates, $options);
 			$this->_clear();
 			return (TRUE);
@@ -1283,7 +1283,7 @@ Class Mongo_db{
 		}
 		try
 		{
-			$options = array_merge($options, array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => TRUE));
+			$options = array_merge(array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => TRUE), $options);
 			$this->db->{$collection}->update($this->wheres, $this->updates, $options);
 			$this->_clear();
 			return (TRUE);
