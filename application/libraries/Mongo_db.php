@@ -123,7 +123,8 @@ Class Mongo_db{
 				$this->port = trim($this->config[$this->activate]['port']);
 			}
 
-			if(empty($this->config[$this->activate]['username']))
+			if(isset($this->config[$this->activate]['no_auth']) == FALSE
+			   && empty($this->config[$this->activate]['username']))
 			{
 				show_error("Username missing from mongodb config group : {$this->activate}", 500);
 			}
@@ -132,7 +133,8 @@ Class Mongo_db{
 				$this->username = trim($this->config[$this->activate]['username']);
 			}
 
-			if(empty($this->config[$this->activate]['password']))
+			if(isset($this->config[$this->activate]['no_auth']) == FALSE 
+			   && empty($this->config[$this->activate]['password']))
 			{
 				show_error("Password missing from mongodb config group : {$this->activate}", 500);
 			}
