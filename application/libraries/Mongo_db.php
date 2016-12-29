@@ -285,6 +285,7 @@ Class Mongo_db{
 	* Insert a multiple document into the collection
 	*
 	* @usage : $this->mongo_db->batch_insert('foo', $data = array());
+	* @return : bool or array : if query fail then false else array of _id successfully inserted.
 	*/
 	public function batch_insert($collection = "", $insert = array())
 	{
@@ -299,13 +300,14 @@ Class Mongo_db{
 		try
 		{
 			$this->db->{$collection}->batchInsert($insert, array('w' => $this->write_concerns, 'j'=>$this->journal));
-			if (isset($insert['_id']))
+			if(is_array($insert) && count($insert) > 0)
 			{
-				return ($insert['_id']);
+			    $insert_ids = array_map(function ($arr) {return $arr['_id'];},$insert);
+			    return ($insert_ids);
 			}
-			else
+			else 
 			{
-				return (FALSE);
+			    return (FALSE);
 			}
 		}
 		catch (MongoCursorException $e)
