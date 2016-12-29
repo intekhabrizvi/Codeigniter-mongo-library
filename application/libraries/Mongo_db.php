@@ -1523,6 +1523,59 @@ Class Mongo_db{
 		}
 		return ($this);
 	}
+	
+	/**
+	* --------------------------------------------------------------------------------
+	* // Command
+	* --------------------------------------------------------------------------------
+	*
+	* Runs a MongoDB command
+	*
+	* @param  string : Collection name, array $query The command query
+	* @usage : $this->mongo_db->command($collection, array('geoNear'=>'buildings', 'near'=>array(53.228482, -0.547847), 'num' => 10, 'nearSphere'=>true));
+	* @access public
+        * @return object or array
+	*/
+	
+        public function command($collection, $command = array())
+        {
+		if (empty($collection))
+		{
+			show_error("No Mongo collection specified to run command", 500);
+		}
+		
+		if (empty($command) || ! is_array($command))
+		{
+			show_error("no command were specified", 500);
+		}
+		
+                try
+                {
+                        $returns = $this->db->{$collection}->command($query);
+			
+                        if ($this->return_as == 'object')
+			{
+				return (object)$returns;
+			}
+			else
+			{
+				return $returns;
+			}
+                }
+
+                catch (MongoCursorException $e)
+		{
+			if(isset($this->debug) == TRUE && $this->debug == TRUE)
+			{
+				show_error("Command failed : {$e->getMessage()}", 500);
+			}
+			else
+			{
+				show_error("Command failed.", 500);
+			}
+		}
+        }
+
 
 	/**
 	* --------------------------------------------------------------------------------
