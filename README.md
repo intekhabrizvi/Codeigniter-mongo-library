@@ -64,7 +64,6 @@ Wiki and how-to can be found here http://intekhabrizvi.github.io/mongodb-library
 ##Profiling Methods
 * `output_benchmark` return complete explain data for all the find based query performed
 
-
 ##Index Method
 * `add_index` Create a new index on collection
 * `remove_index` Remove index from collection
@@ -74,6 +73,7 @@ Wiki and how-to can be found here http://intekhabrizvi.github.io/mongodb-library
 * `switch_db` Switch to a different database
 * `drop_db` Drops a database
 * `drop_collection` Drops a collection
+* `command` Perform MongoDB command
 
 ##Extra Helper
 * `date` Create or convert date to MongoDB based Date
