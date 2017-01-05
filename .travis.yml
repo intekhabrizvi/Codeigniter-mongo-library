@@ -1,0 +1,28 @@
+language: php
+
+php:
+	- '5.6'
+
+services:
+  - mongodb
+
+env:
+  - CI_VERSION=3.1.2
+
+before_install:
+  - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - wget https://github.com/bcit-ci/CodeIgniter/archive/$CI_VERSION.tar.gz -O - | tar xz
+  - cp -r application/* CodeIgniter-$CI_VERSION/application/
+
+# install this project on top of it
+install:
+  - cp -r CodeIgniter-$CI_VERSION/application/* application/
+  - mv CodeIgniter-$CI_VERSION/index.php index.php
+  - rm -rf CodeIgniter-$CI_VERSION
+
+before_script:
+  - sleep 15
+  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+
+script:
+  - phpunit -c phpunit.xml   #custom test command to make sure CLI args don't break the test
