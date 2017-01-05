@@ -586,8 +586,8 @@ class Mongo_lib_test extends TestCase
 
 		$result = $this->obj->list_indexes($this->table_name);
 		//var_dump($result);
-		$key[0] = array('name'=>'_id_', 'v'=>1, 'key'=>array('_id'=>1), 'ns'=>'serp.phpunitest');
-		$key[1] = array('name'=>'name_1', 'v'=>1, 'key'=>array('name'=>1), 'ns'=>'serp.phpunitest');
+		$key[0] = array('name'=>'_id_', 'v'=>1, 'key'=>array('_id'=>1), 'ns'=>'mydb_test.phpunitest');
+		$key[1] = array('name'=>'name_1', 'v'=>1, 'key'=>array('name'=>1), 'ns'=>'mydb_test.phpunitest');
 		$this->assertEquals($key, $result);
 
 		$result = $this->obj->remove_index($this->table_name, array('name'=>1));
@@ -596,7 +596,7 @@ class Mongo_lib_test extends TestCase
 		$result = $this->obj->list_indexes($this->table_name);
 		//var_dump($result);
 		unset($key);
-		$key[0] = array('name'=>'_id_', 'v'=>1, 'key'=>array('_id'=>1), 'ns'=>'serp.phpunitest');
+		$key[0] = array('name'=>'_id_', 'v'=>1, 'key'=>array('_id'=>1), 'ns'=>'mydb_test.phpunitest');
 		
 		$this->assertEquals($key, $result);
 
