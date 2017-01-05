@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/intekhabrizvi/Codeigniter-mongo-library.svg?branch=unitesting)](https://travis-ci.org/intekhabrizvi/Codeigniter-mongo-library)
+=======
 CIMongo - MongoDB Library for Codeigniter
 =======
 
