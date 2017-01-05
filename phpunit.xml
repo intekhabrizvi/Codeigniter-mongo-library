@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpunit bootstrap="application/tests/bootstrap.php">
+	<testsuites>
+		<testsuite name="TestSuite">
+			<directory>application/tests</directory>
+		</testsuite>
+	</testsuites>
+	<php>
+		<const name="PHPUNIT_TEST" value="1" />
+		<server name="REMOTE_ADDR" value="0.0.0.0" />
+	</php>
+	<filter>
+		<blacklist>
+			<directory suffix=".php">system</directory>
+		</blacklist>
+	</filter>
+</phpunit>
