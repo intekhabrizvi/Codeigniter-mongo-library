@@ -20,8 +20,10 @@ before_install:
 
 # install this project on top of it
 install:
+  - pwd
+  - ls -l
   - cp -r CodeIgniter-$CI_VERSION/application/* application/
-  - cp -r CodeIgniter-$CI_VERSION/system/* system/
+  - mv CodeIgniter-$CI_VERSION/system ../
   - mv CodeIgniter-$CI_VERSION/index.php index.php
   - rm -rf CodeIgniter-$CI_VERSION
 
