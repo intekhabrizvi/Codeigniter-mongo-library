@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" tests="32" assertions="0" failures="0" errors="32" time="0.157925">
+    <testcase name="test_insert" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="23" assertions="0" time="0.023901">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_insert
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_get" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="30" assertions="0" time="0.001923">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_get
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_select_get" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="38" assertions="0" time="0.001672">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_select_get
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_select_get2" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="46" assertions="0" time="0.001509">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_select_get2
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="55" assertions="0" time="0.007621">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where_or" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="64" assertions="0" time="0.001715">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where_or
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where_in" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="76" assertions="0" time="0.004053">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where_in
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where_ne" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="86" assertions="0" time="0.002857">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where_ne
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where_like" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="95" assertions="0" time="0.006146">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where_like
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_get_where" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="122" assertions="0" time="0.001948">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_get_where
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_find_one" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="134" assertions="0" time="0.002562">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_find_one
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_count" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="141" assertions="0" time="0.011735">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_count
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where_not_in" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="191" assertions="0" time="0.003406">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where_not_in
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_set" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="201" assertions="0" time="0.008474">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_set
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_addtoset" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="216" assertions="0" time="0.001862">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_addtoset
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_push" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="232" assertions="0" time="0.001612">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_push
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_pop" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="254" assertions="0" time="0.002287">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_pop
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_pull" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="271" assertions="0" time="0.002571">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_pull
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_rename_field" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="294" assertions="0" time="0.002157">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_rename_field
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_inc" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="314" assertions="0" time="0.006577">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_inc
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_mul" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="345" assertions="0" time="0.002256">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_mul
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_max" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="384" assertions="0" time="0.001691">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_max
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_min" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="422" assertions="0" time="0.005550">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_min
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_where_gtlt" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="462" assertions="0" time="0.010655">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_where_gtlt
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_unset_field" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="503" assertions="0" time="0.001928">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_unset_field
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_batch_insert" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="516" assertions="0" time="0.002283">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_batch_insert
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_aggregate" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="536" assertions="0" time="0.001817">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_aggregate
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_order_by_limit" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="550" assertions="0" time="0.001610">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_order_by_limit
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_indexes" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="581" assertions="0" time="0.003262">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_indexes
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_delete" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="605" assertions="0" time="0.008252">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_delete
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_delete_all" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="612" assertions="0" time="0.013647">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_delete_all
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+    <testcase name="test_drop_collection" class="Mongo_lib_test" file="/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php" line="619" assertions="0" time="0.008385">
+      <error type="PHPUnit_Framework_ExceptionWrapper">Mongo_lib_test::test_drop_collection
+CIPHPUnitTestShowErrorException: Hostname missing from mongodb config group : default
+
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Common.php:178
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:110
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:207
+/home/intekhab/cimongo/cimongo/application/libraries/Mongo_db.php:65
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1357
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:1141
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/replacing/core/Loader.php:226
+/home/intekhab/cimongo/cimongo/application/tests/_ci_phpunit_test/CIPHPUnitTestCase.php:121
+/home/intekhab/cimongo/cimongo/application/tests/models/Mongo_lib_test.php:11
+</error>
+    </testcase>
+  </testsuite>
+</testsuites>
