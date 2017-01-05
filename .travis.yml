@@ -23,9 +23,10 @@ install:
   - pwd
   - ls -l
   - cp -r CodeIgniter-$CI_VERSION/application/* application/
-  - mv CodeIgniter-$CI_VERSION/system ../
+  - mv CodeIgniter-$CI_VERSION/system ./
   - mv CodeIgniter-$CI_VERSION/index.php index.php
   - rm -rf CodeIgniter-$CI_VERSION
+  - ls -l
 
 before_script:
   - sleep 15
