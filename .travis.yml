@@ -13,14 +13,14 @@ branches:
   only:
     - unitesting
 
-addons:
-  apt:
-    sources:
-      - mongodb-upstart
-      - mongodb-3.0-precise
-    packages:
-      - mongodb-org-server
-      - mongodb-org-shell
+#addons:
+#  apt:
+#    sources:
+#      - mongodb-upstart
+#      - mongodb-3.0-precise
+#    packages:
+#      - mongodb-org-server
+#      - mongodb-org-shell
 
 before_install:
   - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
@@ -29,15 +29,12 @@ before_install:
 
 # install this project on top of it
 install:
-  - pwd
-  - ls -l
   - cp -r CodeIgniter-$CI_VERSION/application/* application/
   - mv CodeIgniter-$CI_VERSION/system ./
   - mv CodeIgniter-$CI_VERSION/index.php index.php
   - rm -rf CodeIgniter-$CI_VERSION
-  - ls -l
-  - pwd
   - cd application/tests
+  - mongo --version
 
 before_script:
   - sleep 15
