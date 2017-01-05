@@ -13,14 +13,14 @@ branches:
   only:
     - unitesting
 
-#addons:
-#  apt:
-#    sources:
-#      - mongodb-upstart
-#      - mongodb-3.0-precise
-#    packages:
-#      - mongodb-org-server
-#      - mongodb-org-shell
+addons:
+  apt:
+    sources:
+      - mongodb-upstart
+      - mongodb-3.0-precise
+    packages:
+      - mongodb-org-server
+      - mongodb-org-shell
 
 before_install:
   - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
@@ -38,7 +38,7 @@ install:
 
 before_script:
   - sleep 15
-  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+  - mongo mydb_test --eval 'db.createUser({"user":"travis", "pwd":"test", roles:["readWrite", "dbAdmin"]});'
 
 script:
   - phpunit -c phpunit.xml   #custom test command to make sure CLI args don't break the test
