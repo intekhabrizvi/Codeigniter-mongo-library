@@ -1614,7 +1614,7 @@ Class Mongo_db{
 		try{
 			$this->db->{$collection}->createIndex($keys, $options);
 			$this->_clear();
-			return ($this);
+			return TRUE;
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1656,7 +1656,7 @@ Class Mongo_db{
 		{	
 			$this->db->{$collection}->deleteIndex($keys);
 			$this->_clear();
-			return ($this);
+			return TRUE;
 		}
 		catch (MongoCursorException $e)
 		{
