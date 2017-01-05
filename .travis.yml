@@ -9,6 +9,10 @@ services:
 env:
   - CI_VERSION=3.1.2
 
+branches:
+  only:
+    - unitesting
+
 before_install:
   - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - wget https://github.com/bcit-ci/CodeIgniter/archive/$CI_VERSION.tar.gz -O - | tar xz
@@ -17,6 +21,7 @@ before_install:
 # install this project on top of it
 install:
   - cp -r CodeIgniter-$CI_VERSION/application/* application/
+  - cp -r CodeIgniter-$CI_VERSION/system/* system/
   - mv CodeIgniter-$CI_VERSION/index.php index.php
   - rm -rf CodeIgniter-$CI_VERSION
 
