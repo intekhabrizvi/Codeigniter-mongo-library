@@ -1378,6 +1378,48 @@ Class Mongo_db{
 		}
 	}
 
+
+	/**
+	* --------------------------------------------------------------------------------
+	* Execute Operation
+	* --------------------------------------------------------------------------------
+	*
+	* Execute Monogo script
+	*
+	* @usage : $this->mongo_db->execute('return db.tmp.findOne()');
+	*/
+	public function execute($operation)
+	{ 		
+ 		if (empty($operation) && !is_array($operation))
+	 	{
+	 		show_error("Operation must be an string to perform execute.", 500);
+	 	}
+	 	try
+	 	{	
+	 		$documents = $this->db->execute($operation);
+	 		$this->_clear();
+	 		if ($this->return_as == 'object')
+			{
+				return (object)$documents;
+			}
+			else
+			{
+				return $documents;
+			}
+	 	}
+	 	catch (MongoResultException $e)
+		{
+			if(isset($this->debug) == TRUE && $this->debug == TRUE)
+			{
+				show_error("Execute operation failed: {$e->getMessage()}", 500);
+			}
+			else
+			{
+				show_error("Execute operation failed.", 500);
+			}
+		}
+    }
+    
 	/**
 	* --------------------------------------------------------------------------------
 	* Aggregation Operation
