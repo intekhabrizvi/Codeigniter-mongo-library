@@ -79,6 +79,7 @@ For Code Unitesting use branch named `unitesting`
 
 ##Extra Helper
 * `date` Create or convert date to MongoDB based Date
+* `mongo_id` Create or convert hexadecimal string to MongoDB based ObjectId
 
 ##License 
 Creative Commons Attribution 3.0 License.

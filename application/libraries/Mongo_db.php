@@ -1474,6 +1474,29 @@ Class Mongo_db{
 		}
 		
 	}
+	
+	 /**
+    * --------------------------------------------------------------------------------
+    * Mongo ID
+    * --------------------------------------------------------------------------------
+    *
+    * Create a new Mongo ObjectId or pass a 12-byte hexadecimal to create a object.
+    *
+    * @usage : $this->mongo_db->mongo_id($hash);
+    * @param string|null $hash
+    * @return MongoId
+    */
+	public function mongo_id($hash = null)
+    {
+        if( is_null($hash) || empty($hash) )
+        {
+            return new MongoId();
+        }
+        else
+        {
+            return new MongoId($hash);
+        }
+    }
 
 	 /**
 	* --------------------------------------------------------------------------------
