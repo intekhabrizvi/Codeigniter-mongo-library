@@ -14,13 +14,13 @@ This library support
 Wiki and how-to can be found here http://intekhabrizvi.github.io/mongodb-library-for-codeigniter.html 
 
 For Code Unitesting use branch named `unitesting`
-#Methods
+# Methods
 
-##Insert Method
+## Insert Method
 * `insert` Insert a new document into a collection
 * `batch_insert` Insert multiple new documents into a collection
 
-##Select Method
+## Select Method
 * `select` Get select fields from returned documents
 * `where` OR `get_where` Where section of the query
 * `where_in` Where something is in an array of something
@@ -41,7 +41,7 @@ For Code Unitesting use branch named `unitesting`
 * `distinct` Retrieve a list of distinct values for the given key across a single collection
 * `find_one` Retrieve single document from collection
 
-##Update Method
+## Update Method
 * `set` Sets a field to a value
 * `unset_field` Unsets a field
 * `addtoset` Adds a value to an array if doesn't exist
@@ -56,30 +56,30 @@ For Code Unitesting use branch named `unitesting`
 * `update` Update a single document in a collection
 * `update_all` Update all documents in a collection
 
-##Delete Method
+## Delete Method
 * `delete` Delete a single document in a collection
 * `delete_all` Delete all documents in a collection
 
-##Aggregation Method
+## Aggregation Method
 * `aggregate` Perform aggregation query on document
 
-##Profiling Methods
+## Profiling Methods
 * `output_benchmark` return complete explain data for all the find based query performed
 
-##Index Method
+## Index Method
 * `add_index` Create a new index on collection
 * `remove_index` Remove index from collection
 * `list_indexes` Show all index created on collections
 
-##DB Method
+## DB Method
 * `switch_db` Switch to a different database
 * `drop_db` Drops a database
 * `drop_collection` Drops a collection
 * `command` Perform MongoDB command
 
-##Extra Helper
+## Extra Helper
 * `date` Create or convert date to MongoDB based Date
 
-##License 
+## License 
 Creative Commons Attribution 3.0 License.
 Codes are provided AS IS basis, i am not responsible for anything.
