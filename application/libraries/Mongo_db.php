@@ -54,7 +54,7 @@ Class Mongo_db{
 	function __construct($param)
 	{
 
-		if ( ! class_exists('Mongo') && ! class_exists('MongoClient'))
+		if ( !class_exists('MongoDB\Driver\Manager'))
 		{
 			show_error("The MongoDB PECL extension has not been installed or enabled", 500);
 		}
@@ -76,7 +76,7 @@ Class Mongo_db{
 	{
 		if(is_object($this->connect))
 		{
-			$this->connect->close();
+			//$this->connect->close();
 		}
 	}
 
@@ -216,9 +216,7 @@ Class Mongo_db{
 			{
 				$options = array('username'=>$this->username, 'password'=>$this->password);
 			}
-			$this->connect = new MongoClient($dns, $options);
-			$this->db = $this->connect->selectDB($this->database);
-			$this->db = $this->connect->{$this->database};
+			$this->connect = new \MongoDB\Driver\Manager($dns, $options);
 		}
 		catch (MongoConnectionException $e)
 		{
@@ -256,15 +254,10 @@ Class Mongo_db{
 
 		try
 		{
-			$this->db->{$collection}->insert($insert, array('w' => $this->write_concerns, 'j'=>$this->journal));
-			if (isset($insert['_id']))
-			{
-				return ($insert['_id']);
-			}
-			else
-			{
-				return (FALSE);
-			}
+			$bulk = new MongoDB\Driver\BulkWrite;
+                        $bulk->insert($insert);
+                        $cursor = $this->connect->executeBulkWrite($this->database . "." . $collection, $bulk);
+                        return $cursor->getInsertedCount();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -301,16 +294,16 @@ Class Mongo_db{
 		}
 		try
 		{
-			$this->db->{$collection}->batchInsert($insert, array('w' => $this->write_concerns, 'j'=>$this->journal));
-			if(is_array($insert) && count($insert) > 0)
-			{
-			    $insert_ids = array_map(function ($arr) {return $arr['_id'];},$insert);
-			    return ($insert_ids);
-			}
-			else 
-			{
-			    return (FALSE);
-			}
+                    $i = 0;
+                    foreach ($insert as $data)
+                    {
+                        $bulk = new MongoDB\Driver\BulkWrite;
+                        $bulk->insert($data);
+                        $writeConcern = new MongoDB\Driver\WriteConcern(MongoDB\Driver\WriteConcern::MAJORITY, 1000);
+                        $cursor = $this->connect->executeBulkWrite($this->database . "." . $collection, $bulk, $writeConcern);
+                        $i += $cursor->getInsertedCount();
+                    }
+                    return $i;
 		}
 		catch (MongoCursorException $e)
 		{
@@ -775,35 +768,35 @@ Class Mongo_db{
 			show_error("In order to retrieve documents from MongoDB, a collection name must be passed", 500);
 		}
 		try{	
-			$documents = $this->db->{$collection}
-			->find($this->wheres, $this->selects)
-			->limit((int) $this->limit)
-			->skip((int) $this->offset)
-			->sort($this->sorts);
-			$this->explain($documents, $collection);
-			// Clear
-			$this->_clear();
-			$returns = array();
-			
-			while ($documents->hasNext())
-			{
-				if ($this->return_as == 'object')
-				{
-					$returns[] = (object) $documents->getNext();	
-				}
-				else
-				{
-					$returns[] = (array) $documents->getNext();
-				}
-			}
-			if ($this->return_as == 'object')
-			{
-				return (object)$returns;
-			}
-			else
-			{
-				return $returns;
-			}
+			$selected_fields = [];
+                        if (count($this->selects) > 0)
+                        {
+                            $selected_fields = ['projection' => $this->selects];
+                        }
+                        if ($this->limit)
+                        {
+                            $selected_fields['limit'] = $this->limit;
+                        }
+                        if ($this->sorts)
+                        {
+                            $selected_fields['sort'] = $this->sorts;
+                        }
+                        if ($this->offset)
+                        {
+                            $selected_fields['skip'] = $this->offset;
+                        }
+                        $query = new MongoDB\Driver\Query($this->wheres, $selected_fields);
+                        $cursor = $this->connect->executeQuery($this->database . "." . $collection, $query);
+                        $cursor->setTypeMap(['root' => $this->return_as]);
+                        $returns = $cursor->toArray();
+                        $this->_clear();
+                        if ($this->return_as == 'object')
+                        {
+                            return (object) $returns;
+                        } else
+                        {
+                            return $returns;
+                        }
 		}
 		catch (MongoCursorException $e)
 		{
@@ -859,24 +852,19 @@ Class Mongo_db{
 
 		try{
 
-			$document = $this->db->{$collection}->findOne($this->wheres, $this->selects);
-			// Clear
-			$this->_clear();
-			if(is_null($document))
-			{
-				return false;
-			}
-			else
-			{
-				if ($this->return_as == 'object')
-				{
-					return (object)$document;
-				}
-				else
-				{
-					return $document;
-				}
-			}
+			$selected_fields = ['projection' => $this->selects, 'limit' => 1];
+                        $query = new MongoDB\Driver\Query($this->wheres, $selected_fields);
+                        $cursor = $this->connect->executeQuery($this->database . "." . $collection, $query);
+                        $cursor->setTypeMap(['root' => $this->return_as]);
+                        $returns = $cursor->toArray();
+                        $this->_clear();
+                        if ($this->return_as == 'object')
+                        {
+                            return (object) $returns;
+                        } else
+                        {
+                            return $returns;
+                        }
 		}
 		catch (MongoCursorException $e)
 		{
@@ -906,9 +894,16 @@ Class Mongo_db{
 		{
 			show_error("In order to retrieve a count of documents from MongoDB, a collection name must be passed", 500);
 		}
-		$count = $this->db->{$collection}->find($this->wheres)->limit((int) $this->limit)->skip((int) $this->offset)->count();
-		$this->_clear();
-		return ($count);
+		$cmd = new \MongoDB\Driver\Command([ 'count' => $collection, 'query' => $this->wheres]);
+                $cursor = $this->connect->executeCommand($this->database, $cmd);
+                $returns = $cursor->toArray();
+                $this->_clear();
+                $count = 0;
+                if (isset($returns[0]->n))
+                {
+                    $count = $returns[0]->n;
+                }
+                return ($count);
 	}
 
 	/**
@@ -1202,16 +1197,14 @@ Class Mongo_db{
 
 		try
 		{
-			$documents = $this->db->{$collection}->distinct($field, $this->wheres);
-			$this->_clear();
-			if ($this->return_as == 'object')
-			{
-				return (object)$documents;
-			}
-			else
-			{
-				return $documents;
-			}
+			$cmd = new MongoDB\Driver\Command([
+                            'distinct' => $collection,
+                            'key' => $field
+                        ]);
+                        $cursor = $this->connect->executeCommand($this->database, $cmd);
+                        $return = current($cursor->toArray())->values;
+                        $this->_clear();
+                        return $return;
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1244,10 +1237,12 @@ Class Mongo_db{
 
 		try
 		{
-			$options = array_merge(array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => FALSE), $options);
-			$this->db->{$collection}->update($this->wheres, $this->updates, $options);
-			$this->_clear();
-			return (TRUE);
+			$options = array_merge(array('multi' => false, 'upsert' => false), $options);
+                        $bulk = new MongoDB\Driver\BulkWrite;
+                        $bulk->update($this->wheres, $this->updates, $options);
+                        $cursor = $this->connect->executeBulkWrite($this->database . "." . $collection, $bulk);
+                        $this->_clear();
+                        return $cursor->getModifiedCount();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1287,10 +1282,12 @@ Class Mongo_db{
 		}
 		try
 		{
-			$options = array_merge(array('w' => $this->write_concerns, 'j'=>$this->journal, 'multiple' => TRUE), $options);
-			$this->db->{$collection}->update($this->wheres, $this->updates, $options);
-			$this->_clear();
-			return (TRUE);
+			$options = array_merge(array('multi' => true, 'upsert' => false), $options);
+                        $bulk = new MongoDB\Driver\BulkWrite;
+                        $bulk->update($this->wheres, $this->updates, $options);
+                        $cursor = $this->connect->executeBulkWrite($this->database . "." . $collection, $bulk);
+                        $this->_clear();
+                        return $cursor->getModifiedCount();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1322,9 +1319,13 @@ Class Mongo_db{
 		}
 		try
 		{
-			$this->db->{$collection}->remove($this->wheres, array('w' => $this->write_concerns, 'j'=>$this->journal, 'justOne' => TRUE));
-			$this->_clear();
-			return (TRUE);
+			$bulk = new MongoDB\Driver\BulkWrite;
+                        $deleteOptions = ['limit' => $this->limit];
+                        $bulk->delete($this->wheres, $deleteOptions);
+                        $writeConcern = null;
+                        $cursor = $this->connect->executeBulkWrite($this->database . "." . $collection, $bulk, $writeConcern);
+                        $this->_clear();
+                        return $cursor->getDeletedCount();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1361,9 +1362,13 @@ Class Mongo_db{
 		}*/
 		try
 		{
-			$this->db->{$collection}->remove($this->wheres, array('w' => $this->write_concerns, 'j'=>$this->journal, 'justOne' => FALSE));
-			$this->_clear();
-			return (TRUE);
+			$bulk = new MongoDB\Driver\BulkWrite;
+                        $deleteOptions = ['limit' => 0];
+                        $bulk->delete($this->wheres, $deleteOptions);
+                        $writeConcern = null;
+                        $cursor = $this->connect->executeBulkWrite($this->database . "." . $collection, $bulk, $writeConcern);
+                        $this->_clear();
+                        return $cursor->getDeletedCount();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1401,16 +1406,14 @@ Class Mongo_db{
 
 	 	try
 	 	{
-	 		$documents = $this->db->{$collection}->aggregate($operation);
-	 		$this->_clear();
-	 		if ($this->return_as == 'object')
-			{
-				return (object)$documents;
-			}
-			else
-			{
-				return $documents;
-			}
+	 		$cmd = new \MongoDB\Driver\Command([
+                            'aggregate' => $collection,
+                            'pipeline' => $operation
+                        ]);
+                        $cursor = $this->connect->executeCommand($this->database, $cmd);
+                        $return = current($cursor->toArray())->result;
+                        $this->_clear();
+                        return json_decode(json_encode($return), true);
 	 	}
 	 	catch (MongoResultException $e)
 		{
@@ -1612,9 +1615,14 @@ Class Mongo_db{
 			}
 		}
 		try{
-			$this->db->{$collection}->createIndex($keys, $options);
-			$this->_clear();
-			return TRUE;
+			$command = new MongoDB\Driver\Command([
+                            "createIndexes" => $collection,
+                            "indexes" => [array("name" => "indexName", "key" => $keys)]
+                        ]);
+                        $cursor = $this->connect->executeCommand($this->database, $command);
+                        $cursor->setTypeMap(['root' => $this->return_as]);
+                        $this->_clear();
+                        return $returns = $cursor->toArray();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1654,9 +1662,14 @@ Class Mongo_db{
 
 		try
 		{	
-			$this->db->{$collection}->deleteIndex($keys);
-			$this->_clear();
-			return TRUE;
+			$command = new MongoDB\Driver\Command([
+                            "deleteIndexes" => $collection,
+                            "index" => $keys
+                        ]);
+                        $cursor = $this->connect->executeCommand($this->database, $command);
+                        $cursor->setTypeMap(['root' => $this->return_as]);
+                        $this->_clear();
+                        return $returns = $cursor->toArray();
 		}
 		catch (MongoCursorException $e)
 		{
@@ -1686,7 +1699,13 @@ Class Mongo_db{
 		{
 			show_error("No Mongo collection specified to remove all indexes from", 500);
 		}
-		return ($this->db->{$collection}->getIndexInfo());
+		$filter = ['ns' => $this->database . '.' . $collection];
+                $options = isset($this->options['maxTimeMS']) ? ['modifiers' => ['$maxTimeMS' => $this->options['maxTimeMS']]] : [];
+                $query = new MongoDB\Driver\Query($filter, $options);
+                $cursor = $this->connect->executeQuery($this->database . '.system.indexes', $query);
+                $cursor->setTypeMap(['root' => 'array', 'document' => 'array']);
+                $this->_clear();
+                return $returns = $cursor->toArray();
 	}	
 
 	/**
@@ -1709,8 +1728,8 @@ Class Mongo_db{
 
 		try
 		{
-			$this->db = $this->connect->{$this->database};
-			return (TRUE);
+			$this->database = $this->database;
+                        return (TRUE);
 		}
 		catch (Exception $e)
 		{
@@ -1735,8 +1754,10 @@ Class Mongo_db{
 
 		try
 		{
-			$this->connect->{$database}->drop();
-			return (TRUE);
+			$cmd = new \MongoDB\Driver\Command(["dropDatabase" => 1]);
+                        $this->connect->executeCommand($database, $cmd);
+                        $this->_clear();
+                        return TRUE;
 		}
 		catch (Exception $e)
 		{
@@ -1761,8 +1782,10 @@ Class Mongo_db{
 
 		try
 		{
-			$this->db->{$col}->drop();
-			return TRUE;
+			$cmd = new \MongoDB\Driver\Command(["drop" => $col]);
+                        $this->connect->executeCommand($this->database, $cmd);
+                        $this->_clear();
+                        return TRUE;
 		}
 		catch (Exception $e)
 		{
