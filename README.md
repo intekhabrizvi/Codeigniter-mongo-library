@@ -3,6 +3,8 @@
 CIMongo - MongoDB Library for Codeigniter
 =======
 
+Note: It will only be compatible with upgraded version to PHP5.6+, Mongodb 3.0+ PECL 1.3+
+
 This library help you to use perform MongoDB based queries just like active record in CodeIgniter.
 
 This library support
