@@ -187,6 +187,15 @@ Class Mongo_db{
 			{
 				$this->return_as = $this->config[$this->activate]['return_as'];
 			}
+
+			if(empty($this->config[$this->activate]['timeout']))
+			{
+				$this->timeout = 30;
+			}
+			else
+			{
+				$this->timeout=$this->config[$this->activate]['timeout'];
+			}
 		}
 		else
 		{
