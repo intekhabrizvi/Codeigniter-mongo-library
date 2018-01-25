@@ -1026,18 +1026,18 @@ Class Mongo_db{
 	* @usage: $this->mongo_db->where(array('blog_id'=>123))->pop('comments')->update('blog_posts');
 	* @usage: $this->mongo_db->where(array('blog_id'=>123))->pop(array('comments', 'viewed_by'))->update('blog_posts');
 	*/
-	public function pop($field)
+	public function pop($field, $index = -1)
 	{
 		$this->_u('$pop');
 		if (is_string($field))
 		{
-			$this->updates['$pop'][$field] = -1;
+			$this->updates['$pop'][$field] = $index;
 		}
 		elseif (is_array($field))
 		{
 			foreach ($field as $pop_field)
 			{
-				$this->updates['$pop'][$pop_field] = -1;
+				$this->updates['$pop'][$pop_field] = $index;
 			}
 		}
 		return $this;
