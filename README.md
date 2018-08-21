@@ -5,6 +5,8 @@ CIMongo - MongoDB Library for Codeigniter (Legacy)
 For PHP7+, Codeigniter3+ and mongodb-1.5-x php extension support, use the latest library available at https://github.com/intekhabrizvi/codeigniter-mongodb-library
 =======
 
+## We tried to make transition as easy as possible by keeping all functions name as is. In most cases new library would be a drop-in replacement for this library, if not please open a bug request in new library. 
+
 This library help you to use perform MongoDB based queries just like active record in CodeIgniter.
 
 This library support
