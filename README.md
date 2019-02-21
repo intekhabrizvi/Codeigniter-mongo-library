@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/intekhabrizvi/Codeigniter-mongo-library.svg?branch=unitesting)](https://travis-ci.org/intekhabrizvi/Codeigniter-mongo-library)
 =======
-CIMongo - MongoDB Library for Codeigniter
+[DEPRECATED]CIMongo - MongoDB Library for Codeigniter
 =======
 
 This library help you to use perform MongoDB based queries just like active record in CodeIgniter.
