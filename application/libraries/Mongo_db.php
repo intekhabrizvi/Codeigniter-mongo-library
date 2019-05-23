@@ -1551,7 +1551,7 @@ Class Mongo_db{
 		
                 try
                 {
-                        $returns = $this->db->{$collection}->command($query);
+                        $returns = $this->db->{$collection}->command($command);
 			
                         if ($this->return_as == 'object')
 			{
