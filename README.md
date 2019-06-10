@@ -7,6 +7,8 @@ For PHP7+, Codeigniter3+ and mongodb-1.5-x php extension support, use the latest
 
 ## We tried to make transition as easy as possible by keeping all functions name as is. In most cases new library would be a drop-in replacement for this library, if not please open a bug request in new library. 
 
+Note: It will only be compatible with upgraded version to PHP5.6+, Mongodb 3.0+ PECL 1.3+
+
 This library help you to use perform MongoDB based queries just like active record in CodeIgniter.
 
 This library support
