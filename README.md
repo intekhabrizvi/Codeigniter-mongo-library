@@ -77,6 +77,7 @@ For Code Unitesting use branch named `unitesting`
 
 ## DB Method
 * `switch_db` Switch to a different database
+* `collections` List all existing collections on database
 * `drop_db` Drops a database
 * `drop_collection` Drops a collection
 * `command` Perform MongoDB command
